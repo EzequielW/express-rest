@@ -3,6 +3,10 @@ const router = express.Router();
 const Post = require('../model/Post');
 const verify = require('./verifyToken');
 
+const commentsRoute = require('./comments')
+
+router.use('/:postId/comments', commentsRoute)
+
 router.get('/', async (req, res) => {
     try{
         const posts = await Post.find().populate('author_id');
@@ -58,5 +62,5 @@ router.patch('/:postId', async (req, res) => {
     }
 })
 
-module.exports = router;
+module.exports = router
 

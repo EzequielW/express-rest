@@ -1,6 +1,6 @@
 GET http://localhost:3000/posts
 
-GET http://localhost:3000/posts/5e1fdf79b616071964651d23
+GET http://localhost:3000/posts/5e30cd60b25cbc0994fa038d
 
 
 POST http://localhost:3000/posts HTTP/1.1
@@ -36,3 +36,12 @@ content-type: application/json
     "password": "12345678"
 }
 
+GET http://localhost:3000/posts/5e30cd60b25cbc0994fa038d/comments/
+
+POST http://localhost:3000/posts/5e30cd60b25cbc0994fa038d/comments/
+content-type: application/json
+
+{
+    "author": "5e2485f51f2c470630f70a67",
+    "content": "Testing comment"
+}
